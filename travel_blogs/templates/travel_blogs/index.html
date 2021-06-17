@@ -1,0 +1,46 @@
+{% extends "travel_blogs/base.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TRAVEL BLOG</title>
+  </head>
+  <body>
+
+<main>
+{% block page_header %}
+    {% if user.is_authenticated %}
+
+    <div class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'costa_rica.jpg' %}" class="d-block w-100" alt="Costa Rica">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'sweden.jpg' %}" class="d-block w-100" alt="Sweden">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'dubai.jpg' %}" class="d-block w-100" alt="Dubai">
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <div class="jumbotron">
+      <h1 class="display-3">Keep Track Of All Your Vacations.</h1>
+
+      <p class="lead">TRAVEL BLOG is made for the adventure-loving travelers who want to have a space to keep all
+            of their destination memories in one place.</p>
+
+      <a class="btn btn-lg btn-outline-primary" href="{% url 'users:register' %}"
+         role="button">Sign Up &raquo;</a>
+    {% endif %}
+    </div>
+
+{% endblock page_header %}
+
+</main>
+
+  </body>
+</html>

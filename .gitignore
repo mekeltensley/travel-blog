@@ -1,0 +1,8 @@
+#Enviornments
+venv/
+
+#Django
+*.sqlite3
+__pycache__/
+
+

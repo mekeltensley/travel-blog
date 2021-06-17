@@ -1,0 +1,33 @@
+{% extends "travel_blogs/base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Topics</title>
+</head>
+<body>
+
+{% block page_header %}
+  <h1>All Travel Destinations</h1>
+{% endblock page_header %}
+
+{% block content %}
+<h5>Add more destinations below.</h5>
+<h5><a href="{% url 'travel_blogs:new_topic' %}">Add a new topic</a></h5>
+<br><br>
+
+  <div class="card" style="width: 18rem;">
+  <ul class="list-group list-group-flush">
+    {% for topic in topics %}
+    <li class="list-group-item">
+      <a href="{% url 'travel_blogs:topic' topic.id %}">{{ topic }}</a>
+    </li>
+    {% empty %}
+      <h3>No topics have been added yet.</h3>
+    {% endfor %}
+  </ul>
+</div>
+
+{% endblock content %}
+</body>
+</html>
