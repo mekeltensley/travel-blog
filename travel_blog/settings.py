@@ -24,7 +24,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 DEBUG = False
 
-ALLOWED_HOST = [*]
+ALLOWED_HOST = ['travel-blog-us.herokuapp.com']
 
 # Application definition
 
@@ -64,7 +64,7 @@ ROOT_URLCONF = 'travel_blog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS':[],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
